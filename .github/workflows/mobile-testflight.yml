@@ -25,7 +25,7 @@ concurrency:
 jobs:
   build-and-upload:
     name: Build, sign and upload iOS
-    runs-on: macos-15
+    runs-on: macos-26
     environment: mobile-production
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -53,6 +53,15 @@ jobs:
           persist-credentials: false
       - name: Add Flutter SDK to PATH
         run: printf '%s\n' "$GITHUB_WORKSPACE/.flutter-sdk/bin" >> "$GITHUB_PATH"
+
+      - name: Verify App Store Xcode and iOS SDK floor
+        run: |
+          xcodebuild -version
+          IOS_SDK_VERSION="$(xcrun --sdk iphoneos --show-sdk-version)"
+          XCODE_MAJOR="$(xcodebuild -version | awk '/Xcode/{split($2,v,"."); print v[1]}')"
+          IOS_SDK_MAJOR="${IOS_SDK_VERSION%%.*}"
+          test "$XCODE_MAJOR" -ge 26
+          test "$IOS_SDK_MAJOR" -ge 26
 
       - name: Import distribution certificate
         env:
