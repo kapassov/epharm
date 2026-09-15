@@ -5,6 +5,10 @@ All notable production changes to Epharm are recorded here. The format follows
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-09-15
+
+- Fixed App Store Connect release signing for CI/TestFlight builds.
+
 ## [1.0.0] - 2026-09-15
 
 ### Added
