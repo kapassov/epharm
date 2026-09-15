@@ -5,6 +5,10 @@ All notable production changes to Epharm are recorded here. The format follows
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-09-15
+
+- Raised the minimum supported iOS version to 15 for App Store Connect uploads.
+
 ## [1.0.1] - 2026-09-15
 
 - Fixed App Store Connect release signing for CI/TestFlight builds.
