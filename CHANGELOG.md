@@ -5,7 +5,13 @@ All notable production changes to Epharm are recorded here. The format follows
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-09-15
+
 ### Added
+
+- First TestFlight candidate of the Epharm pharmacist mobile application.
+- Production API configuration for `https://epharm.inkar.kz`.
+- iOS privacy declarations, deep links, receipt camera and training QR support.
 
 - Production-grade PostgreSQL and MinIO backup, retention, isolated restore testing and backup metrics.
 - Prometheus, Alertmanager, Grafana, exporters and actionable availability/SLO/capacity alerts.
